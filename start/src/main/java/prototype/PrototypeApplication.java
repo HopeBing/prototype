@@ -24,7 +24,7 @@ public class PrototypeApplication {
 	String index() {
 		List<Map<String, Object>> uses = userMapper.getAllUsers();
 
-		return "hello spring boot";
+		return "hello spring boot2";
 	}
 
 	public static void main(String[] args) {
