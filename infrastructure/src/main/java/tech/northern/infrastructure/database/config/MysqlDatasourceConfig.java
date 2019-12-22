@@ -9,6 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
@@ -19,6 +20,7 @@ import javax.sql.DataSource;
  */
 @Configuration
 @MapperScan(basePackages = MysqlDatasourceConfig.PACKAGE, sqlSessionFactoryRef = "mysqlSqlSessionFactory")
+@PropertySource(value="classpath:mysql-${spring.profiles.active}.properties")
 public class MysqlDatasourceConfig {
     // mysqldao扫描路径
     static final String PACKAGE = "tech.northern.infrastructure.database.dao";
